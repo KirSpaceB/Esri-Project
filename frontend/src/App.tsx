@@ -1,10 +1,9 @@
-import { MapDevelopment } from "./MapDevelopment"
+import { MapDevelopment } from "./components/Map/MapDevelopment"
 function App() {
 
   return (
     <>
       <div>
-        <div>Test</div>
         <MapDevelopment/>
       </div>
     </>
