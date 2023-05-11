@@ -1,4 +1,4 @@
-import { MapDevelopment } from "./components/Map/MapDevelopment"
+import { MapDevelopment } from "./components/map/MapDevelopment"
 function App() {
 
   return (
