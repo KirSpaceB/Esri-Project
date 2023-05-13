@@ -1,10 +1,22 @@
+import Graphic from "@arcgis/core/Graphic";
 import PopupTemplate from "@arcgis/core/PopupTemplate";
 import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
+import SimpleRenderer from "@arcgis/core/renderers/SimpleRenderer";
+import SimpleMarkerSymbol from "@arcgis/core/symbols/SimpleMarkerSymbol";
 
-export const CreateFeatureLayer = (graphics) => {
+export const CreateFeatureLayer = (graphics:Graphic[]) => {
   const popupTemplate = new PopupTemplate({
     title: 'Population Information',
     content: 'Population: {population}',
+  });
+
+  const symbol = new SimpleMarkerSymbol({
+    color: 'blue',
+    size: '10px',
+  });
+
+  const renderer = new SimpleRenderer({
+    symbol: symbol,
   });
 
   return new FeatureLayer({
@@ -17,14 +29,7 @@ export const CreateFeatureLayer = (graphics) => {
       },
     ],
     objectIdField: 'ObjectID',
-    renderer: {
-      type: 'simple',
-      symbol: {
-        type: 'simple-marker',
-        color: 'blue',
-        size: '10px',
-      },
-    },
+    renderer: renderer,
     geometryType: 'point',
     popupTemplate: popupTemplate,
   });
