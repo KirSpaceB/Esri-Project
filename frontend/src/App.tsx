@@ -1,14 +1,12 @@
-import { useEffect } from "react";
+import ToggleJobsData from "./components/display-data/ToggleJobsData";
 import { MapDevelopment } from "./components/map/MapDevelopment";
-import { getIncomeData } from "./shared/services/income-data-2022/getIncomeData";
 const App = () => {
-  useEffect(() => {
-    getIncomeData();
-  })
+
 
   return (
     <>
       <div>
+        <ToggleJobsData/>
         <MapDevelopment/>
       </div>
     </>

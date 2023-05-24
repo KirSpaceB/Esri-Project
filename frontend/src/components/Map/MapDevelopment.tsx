@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
-import { ToggleData } from '../display-data/ToggleData';
 import './styles/MapDevelopment.css'
 import '@arcgis/core/assets/esri/themes/light/main.css';
 import { MapContext } from '../../shared/map-context/MapContext';
+import { ToggleData } from '../display-data/ToggleData';
 
 export const MapDevelopment = () => {
   const [map, setMap] = useState<Map | null>(null);
@@ -31,6 +31,7 @@ export const MapDevelopment = () => {
     <MapContext.Provider value={{map,view}}>
       <div className="map-container">
         <ToggleData/>
+
         <div id="viewDiv" className="view-div"></div>
       </div>
     </MapContext.Provider>

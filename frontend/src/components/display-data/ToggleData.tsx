@@ -6,7 +6,6 @@ import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
 
 export const ToggleData = () => {
   const { map } = useContext(MapContext);
-  console.log(map);
   
   const [isDisplayed, setIsDisplayed] = useState(false);
   const [featureLayer, setFeatureLayer] = useState<FeatureLayer>();
