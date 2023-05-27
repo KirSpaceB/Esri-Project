@@ -1,15 +1,12 @@
-import { useEffect, useState } from "react";
-import { getJobsData } from "../../shared/services/income-data-2022/getIncomeData";
-import { getJobsAPIReturnData } from "../../shared/services/income-data-2022/getIncomeData";
+import { useEffect } from "react"
+import { almedaCountyGraphic } from "../county-jobs-graphic/almedaCounty"
+
 
 const ToggleJobsData = () => {
-  const [countyJobsData, setCountyJobsData] = useState<getJobsAPIReturnData>()
   useEffect(() => {
-    getJobsData().then(data => {
-      setCountyJobsData(data)
-    });
-  },[]);
-  console.log(countyJobsData)
+    almedaCountyGraphic();
+  });
+
   return (
     <div>
       <button>View Jobs Data</button>

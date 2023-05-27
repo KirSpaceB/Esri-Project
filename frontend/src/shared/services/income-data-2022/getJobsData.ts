@@ -3,7 +3,7 @@ interface JobPerCounty {
   jobs: string,
 };
 
-export type getJobsAPIReturnData = JobPerCounty[];
+export type apiReturnType = JobPerCounty[];
 
 
 export const getJobsData = async() => {
@@ -11,13 +11,13 @@ export const getJobsData = async() => {
   const response = await fetch(url, {
     method:"GET",
   });
-  const jsonData: getJobsAPIReturnData = await response.json();
-  let jobsPerCountyArray: getJobsAPIReturnData = [];
+  const jsonData: apiReturnType = await response.json();
+  let jobsPerCountyArray: apiReturnType = [];
 
   for(let i = 0; i < jsonData.length; i++) {
     const jobPerCounty: JobPerCounty = {
       county: jsonData[i].county,
-      jobs: jsonData[i].jobs
+      jobs: jsonData[i].jobs,
     };
     jobsPerCountyArray.push(jobPerCounty);
   };

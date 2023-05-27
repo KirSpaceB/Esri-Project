@@ -4,7 +4,7 @@ import { MapContext } from "../../shared/map-context/MapContext";
 import { useContext, useState } from "react";
 import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
 
-export const ToggleData = () => {
+export const ToggleDataPopulationData = () => {
   const { map } = useContext(MapContext);
   
   const [isDisplayed, setIsDisplayed] = useState(false);
