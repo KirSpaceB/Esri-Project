@@ -1,11 +1,11 @@
 import { CreateGraphics } from "../map-graphics/CreateGraphics";
-import { CreateFeatureLayer } from "../map-feature-layer/CreateFeatureLayer";
+import { PopulationFeatureLayer } from "../map-feature-layer/PopulationFeatureLayer";
 import { MapContext } from "../../shared/map-context/MapContext";
 import { useContext, useState } from "react";
 import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
 
 export const ToggleDataPopulationData = () => {
-  const { map } = useContext(MapContext);
+  const { map } = useContext(MapContext) ?? {};
   
   const [isDisplayed, setIsDisplayed] = useState(false);
   const [featureLayer, setFeatureLayer] = useState<FeatureLayer>();
@@ -15,7 +15,7 @@ export const ToggleDataPopulationData = () => {
     
     if(!isDisplayed) {
       const graphics = CreateGraphics();
-      const createdFeatureLayer = CreateFeatureLayer(graphics);
+      const createdFeatureLayer = PopulationFeatureLayer(graphics);
       setFeatureLayer(createdFeatureLayer);
       
       if(map) {

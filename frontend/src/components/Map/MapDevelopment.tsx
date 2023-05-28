@@ -5,6 +5,7 @@ import './styles/MapDevelopment.css'
 import '@arcgis/core/assets/esri/themes/light/main.css';
 import { MapContext } from '../../shared/map-context/MapContext';
 import { ToggleDataPopulationData } from '../display-data/TogglePopulationData';
+import {ToggleJobsData} from '../display-data/ToggleJobsData';
 
 export const MapDevelopment = () => {
   const [map, setMap] = useState<Map | null>(null);
@@ -12,7 +13,7 @@ export const MapDevelopment = () => {
 
   useEffect(() => {
     const myMap = new Map({
-      basemap: 'streets',
+      basemap: 'streets-vector',
     });
 
     const myView = new MapView({
@@ -31,7 +32,7 @@ export const MapDevelopment = () => {
     <MapContext.Provider value={{map,view}}>
       <div className="map-container">
         <ToggleDataPopulationData/>
-
+        <ToggleJobsData/>
         <div id="viewDiv" className="view-div"></div>
       </div>
     </MapContext.Provider>

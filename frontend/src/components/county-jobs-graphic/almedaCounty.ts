@@ -21,7 +21,6 @@ export const almedaCountyGraphic = async () => {
       )
     }
   });
-  console.log(graphics);
   
   return graphics;
 }

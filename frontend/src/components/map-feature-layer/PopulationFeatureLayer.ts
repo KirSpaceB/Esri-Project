@@ -4,7 +4,7 @@ import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
 import SimpleRenderer from "@arcgis/core/renderers/SimpleRenderer";
 import SimpleMarkerSymbol from "@arcgis/core/symbols/SimpleMarkerSymbol";
 
-export const CreateFeatureLayer = (graphics:Graphic[]) => {
+export const PopulationFeatureLayer = (graphics:Graphic[]) => {
   const popupTemplate = new PopupTemplate({
     title: 'Population Information',
     content: 'Population: {population}',
