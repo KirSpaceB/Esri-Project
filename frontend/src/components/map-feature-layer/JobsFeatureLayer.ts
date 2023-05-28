@@ -7,7 +7,7 @@ import SimpleMarkerSymbol from "@arcgis/core/symbols/SimpleMarkerSymbol";
 export const JobsFeatureLayer = (graphics:Graphic[]) => {
   const popupTemplate = new PopupTemplate({
     title:"Jobs",
-    content:"Content: {jobs}",
+    content:"Jobs: {Alameda County Jobs}",
   });
 
   const symbol = new SimpleMarkerSymbol({
