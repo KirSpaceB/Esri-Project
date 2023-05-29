@@ -9,8 +9,10 @@ export const almedaCountyGraphic = async (): Promise<Graphic[]> => {
     if(obj.county === "Alameda County") {
       console.log(obj.jobs);
       
-      const ALMEDA_COUNTY_LATITUDE = Math.random() * (45 - 40) + 40;
-      const ALMEDA_COUNTY_LOGITUDE = Math.random() * (-73 - (-70)) + (-70);
+      const ALMEDA_COUNTY_LATITUDE = Math.random() * (36.890099 - 36.790099) + 36.790099;
+      const ALMEDA_COUNTY_LOGITUDE = Math.random() * (-121.583234 - (-121.483234)) + (-121.583234);
+      console.log("Latitude", ALMEDA_COUNTY_LATITUDE, "longitude", ALMEDA_COUNTY_LOGITUDE);
+      
       graphics.push(
         new Graphic({
           geometry: new Point({
